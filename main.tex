@@ -1,0 +1,250 @@
+\documentclass[12pt]{ucdavisthesis}
+
+% PLEASE READ THE MANUAL - ucdavisthesis.pdf (in the package installation directory)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                      %
+%               LATEX COMMANDS FOR DOCUMENT SETUP                      %
+%                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{bookmark}
+\usepackage[us,nodayofweek,12hr]{datetime}
+\usepackage{graphicx}
+
+\RequirePackage[font=small,labelfont=bf]{caption}
+\RequirePackage{amsmath,amssymb,amsthm}
+\RequirePackage{graphicx}
+\RequirePackage[hidelinks]{hyperref}
+\RequirePackage{subcaption}
+\RequirePackage{tabularx}
+\RequirePackage{wasysym}
+\RequirePackage{authblk}
+\RequirePackage{bm}
+\RequirePackage{bbm}
+\RequirePackage{color}
+\RequirePackage{nicefrac}
+
+\RequirePackage{lineno}
+\RequirePackage{mathtools}
+\RequirePackage[bibstyle=authoryear,citestyle=authoryear-comp,
+                date=year,
+                maxbibnames=9,maxnames=5,maxcitenames=2,
+                backend=biber,uniquelist=false,uniquename=false,
+                % style=apa,
+                sorting=nyt,
+                hyperref=true]{biblatex}
+
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\V}{\text{V}}
+
+\newcommand{\graham}[1]{\todo[size=\scriptsize, color=red!50]{#1}}
+\newcommand{\vince}[1]{\todo[size=\scriptsize, color=blue!50]{#1}}
+
+\newcommand{\cf}{\emph{cf.} }
+\DeclareMathOperator{\var}{Var}
+\DeclareMathOperator{\cov}{Cov}
+\DeclareMathOperator{\T}{{\mathrm{T}}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\nssh}{SSH_n}
+\newcommand{\nnn}{\nonumber}
+\newcommand{\chapquote}[2]{\begin{quotation} \textit{#1} \end{quotation} \begin{flushright} - #2\end{flushright} }
+
+\DeclareMathOperator{\flt}{\mathrm{flat}}
+
+\newcommand{\msxa}{\mars_X}
+\newcommand{\fsxa}{\venus_X}
+
+\bibliography{biblio}
+
+\hyphenation{dis-ser-ta-tion blue-print man-u-script pre-par-ing} %add hyphenation rules for words TeX doesn't know
+
+
+%\renewcommand{\rightmark}{\scriptsize A University of California Davis\ldots \hfill Rev.~\#1.0 \quad Compiled: \currenttime, \today}
+% a fancier running header that can be used with draftcls options
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                      %
+%        DOCUMENT SETUP AND INFORMATION FOR PRELIMINARY PAGES          %
+%                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title          {Exploring the Effects of Linkage for Ancestry and Temporal Polygenic Adaptation}
+%Exact title of your thesis. Indicate italics where necessary by underlining or using italics. Please capitalize the first letter of each word that would normally be capitalized in a title.
+
+\author         {Vincent Scott Buffalo}
+%Your full name as it appears on University records. Do not use initials.
+
+\authordegrees  {B.A. (UC Davis) 2009}
+%Indicate your previous degrees conferred.
+
+\officialmajor  {Population Biology}
+%This is your official major as it appears on your University records.
+
+\graduateprogram{Population Biology Graduate Group}
+%This is your official graduate program name. Used for UMI abstract.
+
+\degreeyear     {2019}
+% Indicate the year in which your degree will be officially conferred.
+
+\degreemonth    {September}
+% Indicate the month in which your degree will be officially conferred. Used for UMI abstract.
+
+\committee{Graham M. Coop}{Charles H. Langley}{Michael Turelli}{David J. Begun}{}
+% These are your committee members. The command accepts up to five committee members so be sure to have five sets of braces, even if there are empties.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\copyrightyear{2019}
+%\nocopyright
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\dedication{\textsl{To my father, Ray Buffalo, who during my childhood worked
+six days a week, sometimes commuting over 120 miles on weekends to work extra
+hours, all to pay for my education. I will never forget my father visiting me
+in San Jose after a long work day in San Francisco just to teach me fractions
+in café bookstore after I struggled to understand the teacher's explanation. At
+this time, my love of science grew, in no small part thanks to his dedication,
+and his occasional gifts like Linus Pauling's \emph{General Chemistry} and Richard
+Feynman's Feynman's \emph{Lost Lecture: The Motion of Planets Around the Sun} for
+Easter, alongside a few dark chocolate bunnies. I owe you more than you know,
+Dad.  }}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\abstract{
+
+  Since Darwin's characterization, adaptation has often been portrayed as a
+  gradual, plodding process acting over geological timescales to shape
+  organisms' phenotypes to their environment. The masterful theoretical work of
+  early geneticists like R.A. Fisher, Sewall Wright, and J.B.S Haldane
+  developed population genetic models to understand the dynamics of selection,
+  the impact of population structure, and the effects of genetic drift.
+  Recently, the depiction of adaptation as a slow process has shifted, as
+  numerous researchers have found numerous examples of rapid adaptation in the
+  wild. I have been fascinated by rapid adaptation and models of recent
+  ancestry since starting my PhD, and have developed theory and statistical
+  methods exploring these ideas in my dissertation. Uniting my three chapters
+  is the influence of linkage. Linkage shapes patterns of identity by descent
+  (IBD) sharing between recently related individuals on the X chromosome which
+  I explore in Chapter 1 by developing theoretical expressions for the number
+  and length of IBD segments shared on the X chromosome between recent
+  relatives. Due to the inheritance pattern of the X chromosome and the fact
+  that recombination only occurs along the entire length of the X chromosome in
+  females, IBD segment sharing on the X is rather different than sharing on the
+  autosomes.
+
+  In the second chapter of my dissertation, linkage determines the impact
+  heritable fitness variation has in affecting the allele frequency
+  trajectories of neutral sites in the genome. I investigate this in Chapter 2
+  by developing theoretical expressions for the temporal autocovariance
+  experienced by neutral sites, as they become associated with sites that
+  determine a polygenic trait under selection. I propose that these temporal
+  covariances can be estimated using genome-wide temporal data. In Chapter 3, I
+  develop the statistical methods to accurately estimate temporal covariances,
+  and quantify the impact of linked selection in three experimental evolution
+  populations: two \emph{Drosophila simulans} evolve-and-resequence populations
+  adapting to a lab environment, and one artificial selection experiment in
+  mice. Overall, we find linked selection has a significant impact on allele
+  frequency changes genome-wide.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\acknowledgments{
+  First and foremost, I am deeply indebted to my advisor Graham Coop for his
+  mentorship and guidance during my PhD. I came into this PhD broadly
+  interested in evolution, statistics, and genetics, with little idea of how to
+  do rigorous  science, nor how to become a good biologist and population
+  geneticist. Graham was endlessly patient with me as I explored various
+  sub-disciplines and grew distracted by other projects; ultimately he
+  (correctly) predicted that my interests would solidify around what this
+  dissertation is about. There were times over the course of my PhD program
+  that were extraordinarily difficult on me. As I encountered challenges,
+  Graham was incredibly supportive and understanding. I would always look
+  forward to our scientific discussions during our weekly meetings to rekindle
+  my spirit. Looking back, I learned more about life and myself in this period
+  than at any other point in my life, and I owe Graham an incredible debt for
+  being so patient and supportive. I hope to pay his mentorship efforts forward
+  as my career grows.
+  
+I would also like to thank members of the Coop Lab I have had the pleasure of
+working with and learning from: Simon Aeschbacher, Chenling Antelope, Jeremy
+Berg, Gideon Bradburd, Yaniv Brandvain, Erin Calfee, Nancy Chen, Doc Edge,
+Katie Ferris, Emily Josephs, Ivan Juric, Kristin Lee, Matt Osmond, Alisa
+Sedghifar, Anita To, and Sivan Yair. I owe a debt of gratitude to Jeff
+Ross-Ibarra for first getting me interested in population genetics through  his
+REHAB journal club, and allowing me to work in his lab before grad  school. I
+am grateful for countless excellent conversations and good advice  from members
+of my qualifying exam and dissertation committees, Chuck Langley, Dave Begun,
+Jeff Ross-Ibarra, Michael Turelli, Rasmus Nielsen, and Bruce Rannala.
+
+Throughout my PhD, numerous colleagues have collaborated on or provided
+guidance with particular chapters. I would like to thank our collaborator Steve
+M. Mount for his ideas and contributions in Chapter 1, as well as Amy Williams,
+Noah Rosenberg, and two anonymous reviewers for their feedback during the
+revision process at \emph{Genetics}. I am deeply indebted to Nick Barton for
+providing extraordinarily helpful feedback for Chapter 2, as well as Enrique
+Santiago, Aneil Agrawal, Bill Hill, John Kelly, Tyler Kent, Sally Otto,
+Jonathan Pritchard, Kevin Thornton, and two anonymous reviewers for feedback on
+previous versions of the manuscript. Finally, for providing assistance with the
+datasets we reanalyzed and/or helpful feedback on Chapter 3, I would like to
+thank Christian Schl{\"o}tterer, John Kelly, Kimberly Hughes, Frank Chan,
+Campbell Rolian, Nick Barton, Alan Bergland, and Dmitri Petrov.  My research
+has been supported by an NSF Graduate Research Fellowship (1148897); I would
+like to thank the NSF for the opportunity to conduct this research.
+
+I owe my family for their patience and encouragement during this process: Mom,
+Dad, Anne, Lisa, Violet, Lauren, Dalilah, Grammy and Papa, and Grandma and
+Grandpa Lamb. Lastly, I would like to thank my partner Sarah Friedman for
+endless support and being a lovely dissertation-bae. I promise you I'll make up
+for the lost backpacking trips this season.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Each chapter can be in its own file for easier editing and brought in with the \include command.
+% Then use the \includeonly command to speed compilation when working on a particular chapter.
+%%% \includeonly{ucdavisthesis_example_Chap1}
+
+\begin{document}
+
+%\newcommand{\bibfont}{\singlespacing}
+% need this command to keep single spacing in the bibliography when using natbib
+
+%\bibliographystyle{unsrtnat}
+%many other bibliography styles are available (IEEEtran, mla, etc.). Use one appropriate for your field.
+
+\makeintropages %Processes/produces the preliminary pages
+
+\include{chapter_1}
+\include{chapter_2}
+\include{chapter_3}
+
+
+\begingroup
+\setstretch{0.8}
+\setlength\bibitemsep{0pt}
+
+% citations from chapter 1
+\nocite{kram2015}
+\nocite{dplyr}
+\nocite{ggplot2}
+\nocite{R}
+\nocite{Rossum:1995:PRM:869369}
+\nocite{C}
+\nocite{colorspace}
+\nocite{purrr}
+\nocite{tidyr}
+
+
+\printbibliography
+\endgroup
+
+
+% The UMI abstract uses square brackets!
+% \UMIabstract[The UMI abstract is submitted online as plain text. It no longer has a word limit or specific formatting. Therefore, the UMIabstract command is now deprecated.]
+
+\end{document} 
