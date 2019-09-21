@@ -74,15 +74,16 @@ short timescales.
 
 \begin{singlespacing}
 \begin{center}
+  \footnotesize
   \captionof{table}{Summary of the studies reanalyzed.}
-  \begin{tabular}{l c c c c c c}
-    Study & Species & Selection & Replicates & Pop. Size & Gens. & Timepoints \\ 
+  \begin{tabularx}{\textwidth}{l c c c c c c}
+    Study & Species & Selection & Replicates & N & Gens. & Timepoints \\ 
   \hline
     \textcite{Kelly2019-dc}  & \emph{D. simulans} & lab & 3 & $\sim$1100 & 14 & 2 \\ \hline
     \textcite{Barghi2019-qy} & \emph{D. simulans} & lab & 10 & $\sim$1000 & 60 & 7 \\ \hline
     \textcite{Castro2019-uk} & \emph{M. musculus} & \begin{tabular}{c}tibiae length\\control\end{tabular} & \begin{tabular}{c}2\\1\end{tabular} &\begin{tabular}{c}32\\28\end{tabular}  & 20 & 2 \\
  \hline
-\end{tabular}
+\end{tabularx}
 \end{center}
 \end{singlespacing}
 
@@ -965,7 +966,7 @@ p_{t+k})$, $k$ is the number of generations between allele frequency changes.}
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[]{figures/barghi-cov-panels.pdf}
+  \includegraphics[width=\textwidth]{figures/barghi-cov-panels.pdf}
 
   \caption[Temporal covariances for the \textcite{Barghi2019-qy} study for
   individual replicates]{The temporal covariances from the
@@ -985,7 +986,7 @@ temporal covariance matrix.}
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[]{figures/barghi-tailprobs-panels.pdf}
+  \includegraphics[width=\textwidth]{figures/barghi-tailprobs-panels.pdf}
 
   \caption[]{Tail probabilities of \textcite{Barghi2019-qy} data for various
   $\alpha$ levels}
@@ -997,7 +998,7 @@ temporal covariance matrix.}
 \begin{figure}[!ht]
   \centering
 
-  \includegraphics[]{figures/barghi-tailprobs-seqid-20.pdf}
+  \includegraphics[width=\textwidth]{figures/barghi-tailprobs-seqid-20.pdf}
 
   \caption[20\% tail probabilities based on sign-permuting whole
   chromosomes]{The 20\% lower and upper tail probabilities for the observed
@@ -1039,7 +1040,7 @@ the pattern we would expect under genome-wide fluctuating selection.
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[]{figures/bergland_pvalues.pdf}
+  \includegraphics[width=\textwidth]{figures/bergland_pvalues.pdf}
 
   \caption[Scatterplot and distribution of p-values from the original
   \textcite{Bergland2014-ij} study and our reanalysis]{A: Scatterplot of the
@@ -1110,7 +1111,7 @@ selection.
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[]{figures/bergland-combined-hists.pdf}
+  \includegraphics[width=\textwidth]{figures/bergland-combined-hists.pdf}
 
   \caption[Distribution of p-values from the \textcite{Bergland2014-ij} study
   alongside permutation distribution]{Distribution of p-values from the
@@ -1123,7 +1124,7 @@ selection.
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[]{figures/bergland-correction-plot.pdf}
+  \includegraphics[width=\textwidth]{figures/bergland-correction-plot.pdf}
 
   \caption[Bias correction diagnostic plot for the \textcite{Bergland2014-ij}
   data]{The variance and covariances from the \textcite{Bergland2014-ij} study,
@@ -1166,7 +1167,7 @@ follow that of seasonal fluctuating selection.
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[]{figures/bergland-covs-figure.pdf}
+  \includegraphics[width=\textwidth]{figures/bergland-covs-figure.pdf}
 
   \caption[Temporal covariances through time for the \textcite{Bergland2014-ij}
   study]{Temporal covariances from the \textcite{Bergland2014-ij} study, from
